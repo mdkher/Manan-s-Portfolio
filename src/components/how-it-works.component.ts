@@ -34,7 +34,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
              </div>
              
              <!-- Marquee Container -->
-             <div class="flex flex-col gap-4 mb-8 opacity-60">
+             <div class="flex flex-col gap-4 mb-8 opacity-60 group relative mask-linear-gradient">
                 <!-- Row 1 -->
                 <div class="flex gap-4 animate-marquee whitespace-nowrap">
                    <span class="px-6 py-2 bg-white/20 rounded-full">Mobile apps</span>
@@ -74,10 +74,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
              </div>
              
              <!-- Stacked Cards Animation -->
-             <div class="relative h-48 w-full mt-8 flex items-end justify-center">
-                <div class="absolute w-40 h-56 bg-white rounded-xl shadow-lg transform rotate-[-12deg] translate-x-[-40px] translate-y-[20px] opacity-80"></div>
-                <div class="absolute w-40 h-56 bg-white rounded-xl shadow-lg transform rotate-[12deg] translate-x-[40px] translate-y-[20px] opacity-80"></div>
-                <div class="relative w-40 h-56 bg-white rounded-xl shadow-2xl z-10 overflow-hidden">
+             <div class="relative h-48 w-full mt-8 flex items-end justify-center group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute w-40 h-56 bg-white rounded-xl shadow-lg transform rotate-[-12deg] translate-x-[-40px] translate-y-[20px] opacity-80 transition-all duration-500 group-hover:rotate-[-20deg] group-hover:translate-x-[-60px] group-hover:translate-y-[10px]"></div>
+                <div class="absolute w-40 h-56 bg-white rounded-xl shadow-lg transform rotate-[12deg] translate-x-[40px] translate-y-[20px] opacity-80 transition-all duration-500 group-hover:rotate-[20deg] group-hover:translate-x-[60px] group-hover:translate-y-[10px]"></div>
+                <div class="relative w-40 h-56 bg-white rounded-xl shadow-2xl z-10 overflow-hidden transition-all duration-500 group-hover:translate-y-[-10px]">
                    <img src="https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec196c_card.png" class="w-full h-full object-cover" alt="Card">
                 </div>
              </div>

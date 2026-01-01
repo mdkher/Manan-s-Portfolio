@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
           <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#F9F5F2] to-transparent z-10"></div>
           <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#F9F5F2] to-transparent z-10"></div>
           
-          <div class="flex gap-8 animate-marquee whitespace-nowrap">
+          <div class="flex gap-8 animate-marquee whitespace-nowrap hover:[animation-play-state:paused] hover:cursor-grab active:cursor-grabbing">
             <!-- Repeated Images for seamless loop -->
              @for (item of [1,2,3,4,5,6,1,2,3,4,5,6]; track $index) {
                 <div class="w-80 h-60 bg-gray-200 rounded-2xl flex-shrink-0 overflow-hidden shadow-md">
