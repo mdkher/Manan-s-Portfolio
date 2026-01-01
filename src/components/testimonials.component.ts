@@ -4,12 +4,12 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-testimonials',
   standalone: true,
   template: `
-    <section class="py-20 px-6 bg-white">
+    <section id="testimonials-section" class="py-20 px-6 bg-white">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           <!-- Webflow Quote -->
-          <div class="flex flex-col items-center text-center space-y-6">
+          <div id="testimonial-webflow" class="flex flex-col items-center text-center space-y-6">
             <h3 class="text-3xl md:text-4xl font-serif italic text-[#191919]">
               "Designjoy shows that they know the art of subtlety."
             </h3>
@@ -17,7 +17,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
           </div>
 
           <!-- Kevin O'Leary Quote -->
-          <div class="flex flex-col items-center text-center space-y-6">
+          <div id="testimonial-kevin" class="flex flex-col items-center text-center space-y-6">
              <h3 class="text-3xl md:text-4xl font-serif italic text-[#191919]">
               "Design is everything, and these guys have nailed it."
             </h3>

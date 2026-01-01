@@ -31,6 +31,8 @@
               "marquee-reverse": "marquee-reverse 25s linear infinite",
               float: "float 6s ease-in-out infinite",
               "float-delayed": "float 6s ease-in-out 3s infinite",
+              "subtle-drift": "subtle-drift 8s ease-in-out infinite alternate",
+              blob: "blob 10s infinite",
             },
             keyframes: {
               marquee: {
@@ -44,6 +46,19 @@
               float: {
                 "0%, 100%": { transform: "translateY(0)" },
                 "50%": { transform: "translateY(-20px)" },
+              },
+              "subtle-drift": {
+                "0%": { transform: "translate(0, 0) rotate(-12deg)" },
+                "25%": { transform: "translate(10px, -10px) rotate(-14deg)" },
+                "50%": { transform: "translate(-5px, -15px) rotate(-10deg)" },
+                "75%": { transform: "translate(-10px, -5px) rotate(-13deg)" },
+                "100%": { transform: "translate(0, 0) rotate(-12deg)" },
+              },
+              blob: {
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(15px, -20px) scale(1.05)" },
+                "66%": { transform: "translate(-10px, 10px) scale(0.95)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
               },
             },
           },

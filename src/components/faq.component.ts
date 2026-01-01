@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="py-24 px-6 bg-[#F9F5F2]">
+    <section id="faq-section" class="py-24 px-6 bg-[#F9F5F2]">
       <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
         
         <!-- Header -->
         <div class="lg:col-span-1">
-          <h2 class="text-4xl md:text-5xl font-bold text-[#191919] mb-8 sticky top-24">
+          <h2 id="faq-heading" class="text-4xl md:text-5xl font-bold text-[#191919] mb-8 sticky top-24">
             <span class="font-serif italic font-light block mb-2">Frequently</span>
             asked questions
           </h2>
@@ -29,7 +29,7 @@ import { CommonModule } from '@angular/common';
         </div>
 
         <!-- Questions -->
-        <div class="lg:col-span-2 space-y-4">
+        <div id="faq-list" class="lg:col-span-2 space-y-4">
            @for (item of faqItems(); track item.question; let i = $index) {
              <div class="bg-white rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-md" (click)="toggle(i)">
                 <div class="flex justify-between items-center gap-4">

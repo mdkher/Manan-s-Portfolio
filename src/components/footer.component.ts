@@ -4,13 +4,13 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-footer',
   standalone: true,
   template: `
-    <footer id="book" class="bg-[#191919] text-white pt-24 pb-12 px-6 rounded-t-[3rem]">
+    <footer id="footer-section" class="bg-[#191919] text-white pt-24 pb-12 px-6 rounded-t-[3rem]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         <!-- Left Side -->
         <div class="flex flex-col justify-between">
            <div>
-              <span class="text-3xl font-bold tracking-tighter text-white mb-12 block">Manan.</span>
+              <span id="footer-logo" class="text-3xl font-bold tracking-tighter text-white mb-12 block">Manan.</span>
               
               <h2 class="text-4xl md:text-5xl font-bold mb-6">
                 Let's build something <span class="font-serif italic text-gray-400 font-normal">amazing</span> together.
@@ -32,12 +32,12 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
         <!-- Right Side (Booking Embed Placeholder) -->
         <!-- Right Side (Simple Contact Form Placeholder) -->
-        <div class="bg-black/50 rounded-[2rem] p-8 md:p-12 border border-white/10 relative overflow-hidden flex flex-col justify-center">
+        <div id="footer-contact-card" class="bg-black/50 rounded-[2rem] p-8 md:p-12 border border-white/10 relative overflow-hidden flex flex-col justify-center">
              <h3 class="text-2xl font-bold mb-4">Get in touch</h3>
              <p class="text-gray-400 mb-8">
                 Have a project in mind? Reach out to me directly.
              </p>
-             <a href="mailto:hello@example.com" class="inline-flex items-center justify-center bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-200 transition-colors">
+             <a href="mailto:hello@example.com" id="footer-email-btn" class="inline-flex items-center justify-center bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-200 transition-colors">
                 Email Me
              </a>
         </div>
