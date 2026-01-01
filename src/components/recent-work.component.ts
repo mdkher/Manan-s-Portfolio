@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recent-work',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <section id="recent-work-section" class="py-24 px-6 bg-[#F9F5F2]">
       <div class="max-w-7xl mx-auto">
@@ -71,7 +72,7 @@ import { CommonModule } from '@angular/common';
                        <h3 class="text-3xl font-bold mb-2">Selected Work</h3>
                        <p class="text-slate-600 font-medium">Impactful solutions for global brands including EY & Infosys.</p>
                    </div>
-                   <button class="bg-[#191919] text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">See recent work</button>
+                   <button routerLink="/work" class="bg-[#191919] text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">See recent work</button>
                 </div>
              </div>
           </div>

@@ -140,12 +140,56 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
         </div>
 
         <!-- Logos -->
-        <div class="mt-20 flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-           <!-- Using the same logo placeholders for now, can be swapped for Research/Figma/Principle logos -->
-           <img src="https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec1986_Nectar-sleep-logo-vector%201.svg" class="h-8 md:h-10 w-auto" alt="Tool 1">
-           <img src="https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec1987_bmc-full-logo%201.svg" class="h-8 md:h-10 w-auto" alt="Tool 2">
-           <img src="https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec198a_svg.svg" class="h-8 md:h-10 w-auto" alt="Tool 3">
-           <img src="https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec1989_Vector.svg" class="h-8 md:h-10 w-auto" alt="Tool 4">
+        <!-- Logos -->
+        <div class="mt-20 flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+           <!-- Figma -->
+           <div class="group relative flex flex-col items-center justify-center">
+             <img src="https://cdn.simpleicons.org/figma" class="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-110" alt="Figma">
+             <span class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-sm font-semibold text-[#191919] whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-black/5 pointer-events-none">Figma</span>
+           </div>
+
+           <!-- Behance -->
+           <div class="group relative flex flex-col items-center justify-center">
+             <img src="https://cdn.simpleicons.org/behance" class="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-110" alt="Behance">
+             <span class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-sm font-semibold text-[#191919] whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-black/5 pointer-events-none">Behance</span>
+           </div>
+
+           <!-- Angular -->
+           <div class="group relative flex flex-col items-center justify-center">
+             <img src="https://cdn.simpleicons.org/angular" class="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-110" alt="Angular">
+             <span class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-sm font-semibold text-[#191919] whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-black/5 pointer-events-none">Angular</span>
+           </div>
+
+           <!-- TypeScript -->
+           <div class="group relative flex flex-col items-center justify-center">
+             <img src="https://cdn.simpleicons.org/typescript" class="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-110" alt="TypeScript">
+             <span class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-sm font-semibold text-[#191919] whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-black/5 pointer-events-none">TypeScript</span>
+           </div>
+
+           <!-- Google AI (Gemini) -->
+           <div class="group relative flex flex-col items-center justify-center">
+             <img src="https://cdn.simpleicons.org/googlegemini" class="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-110" alt="Google AI">
+             <span class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-sm font-semibold text-[#191919] whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-black/5 pointer-events-none">Google AI</span>
+           </div>
+
+           <!-- Miro -->
+           <div class="group relative flex flex-col items-center justify-center">
+             <img src="https://cdn.simpleicons.org/miro" class="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-110" alt="Miro">
+             <span class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-sm font-semibold text-[#191919] whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-black/5 pointer-events-none">Miro</span>
+           </div>
+
+           <!-- Antigravity (Custom Rocket Icon) -->
+           <div class="group relative flex flex-col items-center justify-center">
+             <div class="h-8 md:h-10 w-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110 text-[#191919]">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-full w-auto">
+                 <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                 <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                 <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                 <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+               </svg>
+             </div>
+             <span class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-sm font-semibold text-[#191919] whitespace-nowrap bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-black/5 pointer-events-none">Antigravity</span>
+           </div>
         </div>
       </div>
     </section>

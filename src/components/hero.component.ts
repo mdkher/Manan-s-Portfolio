@@ -6,10 +6,10 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
   template: `
     <section
       id="hero-section"
-      class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden"
+      class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden"
     >
       <div
-        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
       >
         <!-- Left Content -->
         <div id="hero-text-container" class="max-w-2xl">
@@ -109,14 +109,14 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
 
             <!-- Floating Card Mockup Overlay -->
             <!-- Floating Card Mockup Overlay -->
-            <div id="hero-inner-card" class="absolute top-[20%] -right-[20%] w-[80%] z-0 animate-subtle-drift">
+            <div id="hero-inner-card" class="absolute top-[20%] -right-[20%] w-[80%] z-0">
                <!-- Soft Glow Background -->
                <div class="absolute inset-0 bg-[#8054FF] blur-[60px] opacity-40 rounded-full scale-90"></div>
                
                <img
                  src="https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec196c_card.png"
                  alt="Membership Card"
-                 class="relative w-full shadow-2xl transition-all duration-500 hover:scale-105"
+                 class="relative w-full shadow-2xl transition-all duration-500 hover:scale-105 animate-subtle-drift"
                />
             </div>
           </div>

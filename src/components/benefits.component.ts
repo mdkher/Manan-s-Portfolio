@@ -69,7 +69,7 @@ export class BenefitsComponent {
     },
     {
       title: 'Mentorship',
-      desc: 'Elevating the team culture and knowledge sharing.',
+      desc: 'Elevating your team culture and knowledge sharing.',
       icon: 'https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec19a1_Touch-Id--Streamline-Nova.png'
     }
   ]);

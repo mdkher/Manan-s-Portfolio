@@ -23,9 +23,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
            <div class="space-y-4">
               <img src="https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec19d8_Smiley%20faces.svg" alt="Smiles" class="w-32 opacity-80">
               <div class="flex flex-col md:flex-row md:items-center gap-6 text-sm text-gray-500">
-                 <span>Headquartered in Phoenix, Arizona</span>
-                 <a href="#" class="hover:text-white transition-colors">Terms of service</a>
-                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                 <span>Based in Surat, India 🇮🇳</span>
               </div>
            </div>
         </div>
