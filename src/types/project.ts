@@ -105,4 +105,22 @@ export interface CaseStudy {
   reflection: string;
   color?: string;
   year?: string;
+  // CEO / Business Perspective
+  businessPerspective?: {
+    roi: string;
+    marketImpact: string;
+    executiveSummary: string;
+  };
+  // Tech Architect Perspective
+  architectPerspective?: {
+    stackRationale: string;
+    technicalChallenges: string[];
+    scalability: string;
+  };
+  // UX Manager Perspective
+  uxManagerPerspective?: {
+    teamLeadership: string;
+    userEmpathy: string;
+    accessibilityFocus: string;
+  };
 }

@@ -61,14 +61,16 @@ export default function LineReveal({
       if (splitBy === "lines") {
         // Force a temp render to measure lines
         const range = document.createRange();
-        // Approach: wrap every TextNode word-by-word, then group by top position
-        const words = text.split(/(\s+)/);
-        node.innerHTML = words
-          .map((w) =>
-            w.trim()
-              ? `<span class="lr-word" style="display:inline-block;white-space:nowrap">${w}</span>`
-              : w
-          )
+        // Regex that matches: 1. HTML tags, 2. Non-whitespace/non-tag chunks, 3. Whitespace chunks
+        const tokens = text.match(/(<[^>]*>|[^<>\s]+|\s+)/g) || [];
+        node.innerHTML = tokens
+          .map((t) => {
+            if (t.startsWith("<") && t.endsWith(">")) return t; // Return tag as is
+            if (t.trim()) {
+              return `<span class="lr-word" style="display:inline-block;white-space:nowrap">${t}</span>`;
+            }
+            return t;
+          })
           .join("");
 
         const wordEls = Array.from(node.querySelectorAll<HTMLElement>(".lr-word"));
@@ -102,26 +104,28 @@ export default function LineReveal({
       }
 
       if (splitBy === "words") {
-        node.innerHTML = text
-          .split(/(\s+)/)
-          .map((w) =>
-            w.trim()
-              ? `<span class="lr-clip" style="display:inline-block;overflow:hidden;vertical-align:bottom;padding:0.15em;margin:-0.15em"><span class="lr-inner" style="display:inline-block">${w}</span></span>`
-              : w
-          )
+        const tokens = text.match(/(<[^>]*>|[^<>\s]+|\s+)/g) || [];
+        node.innerHTML = tokens
+          .map((t) => {
+            if (t.startsWith("<") && t.endsWith(">")) return t;
+            if (t.trim()) {
+              return `<span class="lr-clip" style="display:inline-block;overflow:hidden;vertical-align:bottom;padding:0.15em;margin:-0.15em"><span class="lr-inner" style="display:inline-block">${t}</span></span>`;
+            }
+            return t;
+          })
           .join("");
         const inners = Array.from(node.querySelectorAll<HTMLElement>(".lr-inner"));
         return { wrappers: inners, originals };
       }
 
       // chars
-      node.innerHTML = text
-        .split("")
-        .map((c) =>
-          c === " "
-            ? "&nbsp;"
-            : `<span class="lr-clip" style="display:inline-block;overflow:hidden;vertical-align:bottom;padding:0.15em;margin:-0.15em"><span class="lr-inner" style="display:inline-block">${c}</span></span>`
-        )
+      const tokens = text.match(/(<[^>]*>|[^<>\s]|\s+)/g) || [];
+      node.innerHTML = tokens
+        .map((t) => {
+          if (t.startsWith("<") && t.endsWith(">")) return t;
+          if (t === " ") return "&nbsp;";
+          return `<span class="lr-clip" style="display:inline-block;overflow:hidden;vertical-align:bottom;padding:0.15em;margin:-0.15em"><span class="lr-inner" style="display:inline-block">${t}</span></span>`;
+        })
         .join("");
       const inners = Array.from(node.querySelectorAll<HTMLElement>(".lr-inner"));
       return { wrappers: inners, originals };

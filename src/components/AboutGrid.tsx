@@ -157,19 +157,22 @@ export default function AboutGrid() {
     if (prefersReduced) return;
 
     const ctx = gsap.context(() => {
-      // Bouncy entrance
+      // Cinematic Blur Reveal
       gsap.fromTo(
         sectionRef.current?.querySelectorAll(".about-bento-reveal") || [],
-        { opacity: 0, y: 100, scale: 0.8, rotationX: 10 },
+        { opacity: 0, y: 30, filter: "blur(16px)", scale: 0.95 },
         {
           opacity: 1,
           y: 0,
+          filter: "blur(0px)",
           scale: 1,
-          rotationX: 0,
           duration: 1.5,
           stagger: 0.1,
-          ease: "elastic.out(1, 0.7)",
-          scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
+          ease: "expo.out",
+          scrollTrigger: { 
+            trigger: sectionRef.current, 
+            start: "top 85%",
+          },
         }
       );
       
@@ -192,8 +195,8 @@ export default function AboutGrid() {
 
   return (
     <section ref={sectionRef} className="py-24 px-6 max-w-[88rem] mx-auto w-full relative z-20" aria-label="Detailed Experience Grid">
-      <div className="text-center mb-20 relative">
-        <span className="text-[12px] uppercase tracking-[0.5em] text-[var(--color-electric-mid)] font-black block mb-4 animate-pulse">
+      <div className="text-center mb-24 relative">
+        <span className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold block mb-4">
           Experience In A Glance
         </span>
         

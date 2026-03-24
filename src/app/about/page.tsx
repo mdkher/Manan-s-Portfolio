@@ -11,48 +11,79 @@ const SmoothScroll  = dynamic(() => import("@/components/SmoothScroll"),  { ssr:
 const Navbar        = dynamic(() => import("@/components/Navbar"),        { ssr: false });
 const MassiveFooter = dynamic(() => import("@/components/MassiveFooter"), { ssr: false });
 const AboutGrid     = dynamic(() => import("@/components/AboutGrid"),     { ssr: false });
-
+const LineReveal    = dynamic(() => import("@/components/LineReveal"),    { ssr: false });
+const HoverTextEffect = dynamic(() => import("@/components/HoverTextEffect"), { ssr: false });
+const MagneticCursor = dynamic(() => import("@/components/MagneticCursor"), { ssr: false });
 export default function About() {
-  const heroRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(".about-reveal",
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "power3.out", delay: 0.3 }
-      );
-
-      if (textRef.current) {
-        gsap.fromTo(textRef.current.querySelectorAll(".text-reveal"),
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out",
-            scrollTrigger: { trigger: textRef.current, start: "top 80%", once: true }
+      const initAnimations = () => {
+        // Hero Section Blur Reveal
+        gsap.fromTo(".about-reveal",
+          { opacity: 0, y: 30, filter: "blur(16px)" },
+          { 
+            opacity: 1, 
+            y: 0, 
+            filter: "blur(0px)",
+            duration: 1.5, 
+            stagger: 0.15, 
+            ease: "expo.out"
           }
         );
-      }
-    }, [heroRef, textRef]);
+
+        // Narrative Section Scroll Reveal
+        if (textRef.current) {
+          gsap.fromTo(textRef.current.querySelectorAll(".text-reveal"),
+            { opacity: 0, y: 30, filter: "blur(12px)" },
+            {
+              opacity: 1, 
+              y: 0, 
+              filter: "blur(0px)",
+              duration: 1.2, 
+              stagger: 0.2, 
+              ease: "expo.out",
+              scrollTrigger: { 
+                trigger: textRef.current, 
+                start: "top 80%",
+              }
+            }
+          );
+        }
+      };
+
+      // Listen for global preloader exit or fire immediately if not present
+      const handleIntro = () => initAnimations();
+      window.addEventListener("startHeroIntro", handleIntro);
+
+      // Force fire if preloader was already done (direct nav)
+      if (typeof window !== "undefined" && (window as unknown as { preloaderDone: boolean }).preloaderDone) handleIntro();
+
+      return () => window.removeEventListener("startHeroIntro", handleIntro);
+    }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
     <SmoothScroll>
+      <MagneticCursor />
       <Navbar />
 
       <main aria-label="About Manan Kher">
         {/* About Hero */}
-        <section ref={heroRef} className="hero-mesh relative pt-48 pb-20 px-6 overflow-hidden flex flex-col justify-center items-center text-center min-h-[60vh]">
+        <section className="relative pt-48 pb-20 px-6 overflow-hidden flex flex-col justify-center items-center text-center min-h-[70vh]">
           <div className="max-w-4xl relative z-10">
-            <div className="about-reveal inline-block mb-6 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-bold uppercase tracking-widest text-orange transition-colors duration-300 hover:bg-white/10">
-              Identity &amp; Focus
+            <div className="about-reveal inline-block mb-10 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 transition-colors duration-300">
+               <HoverTextEffect text="Identity & Focus" />
             </div>
 
-            <h1 className="about-reveal text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.95] mb-8 text-white drop-shadow-2xl">
+            <LineReveal as="h1" splitBy="words" className="about-reveal text-6xl md:text-[10rem] font-black tracking-tighter leading-[0.85] mb-8 text-white">
               Transiting to <br />
-              <span className="font-[family-name:var(--font-instrument-serif)] italic font-light text-[var(--color-electric-mid)]">Product</span>
-            </h1>
+              <span className="italic font-light font-serif text-electric opacity-50">Product</span>
+            </LineReveal>
           </div>
 
           {/* Decorative glows */}

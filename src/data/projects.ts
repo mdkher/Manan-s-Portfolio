@@ -3,336 +3,372 @@ import { CaseStudy } from "../types/project";
 export const PROJECTS: CaseStudy[] = [
   {
     id: "globant-design-system",
-    title: "Globant Design System",
-    tagline: "Revolutionizing Fintech Onboarding",
-    heroImage: "https://images.unsplash.com/photo-1481487484168-9b995ecc1679?q=80&w=2000&auto=format&fit=crop",
+    title: "Global Design System",
+    tagline: "Standardizing Experience at Scale",
+    heroImage: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2000&auto=format&fit=crop",
     role: "Lead Product Designer",
-    timeline: "3 Months",
-    team: "1 PM, 3 Engineers",
-    tools: ["Figma", "Principle", "Linear"],
-    color: "#8054FF",
-    problem: "Users were dropping off at a rate of 65% during the KYC verification process due to unclear instructions and friction.",
-    solution: "Designed a step-by-step, gamified onboarding flow with real-time feedback, reducing cognitive load and increasing completion rates.",
+    timeline: "2.5 Years",
+    team: "13+ (4 FE, 1 QA, 8 Designers)",
+    tools: ["Figma", "Storybook", "Stencil.js", "React", "Angular"],
+    color: "#4F46E5",
+    problem: "A fragmented ecosystem of 50+ products led to inconsistent UI, massive design debt, and recurring accessibility gaps. Teams were 'reinventing the button' in every sprint.",
+    solution: "Architected a multi-framework, token-driven design system using Web Components. Established a centralized 'source of truth' that bridges the gap between Figma and Production.",
     research: {
-      overview: "We needed to understand why users were abandoning the process after uploading their ID. Quantitative data showed the drop-off, but qualitative research revealed the anxiety behind it.",
+      overview: "Conducted a cross-organizational audit revealing 14 different button styles and 60+ shades of gray. Interviewed 20+ developers to identify handoff friction points.",
       insights: [
-        "Users felt overwhelmed by asking for documents upfront.",
-        "Lack of progress indicators caused anxiety.",
-        "Mobile responsiveness was poor on older devices.",
-      ],
-      quote: '"I just want to open an account without feeling like I need a law degree."',
-      methods: [
-        { name: "User Interviews", value: "15", icon: "🎤" },
-        { name: "Survey Responses", value: "250+", icon: "📝" },
-        { name: "Usability Tests", value: "10", icon: "🧪" },
-        { name: "Heatmaps Analyzed", value: "500+", icon: "🔥" },
+        "Inconsistency slowed down QA by 30% due to repetitive UI bug reporting.",
+        "Designers spent 40% of their time on pixel-pushing instead of UX logic.",
+        "Accessibility was treated as a post-launch fix rather than a core requirement."
       ],
       findings: [
         {
-          title: "Document Anxiety",
-          description: 'Users hesitated to upload ID without knowing "why" it was needed immediately. Trust was a major barrier.',
+          title: "Token Fragmentation",
+          description: "Hardcoded hex values across products made dark mode implementation impossible.",
           type: "Pain Point",
-          severity: "High",
+          severity: "High"
         },
         {
-          title: 'The "Lost" Feeling',
-          description: "Without a clear progress stepper, users over-estimated the time remaining and bailed out early.",
+          title: "Library Adoption",
+          description: "Teams resisted libraries that were framework-specific (React only).",
           type: "Behavior",
-          severity: "Medium",
-        },
-        {
-          title: "Gamification Opportunity",
-          description: 'Users responded positively to small "success" animations during testing, suggesting a desire for positive reinforcement.',
-          type: "Opportunity",
-          severity: "Low",
-        },
-      ],
-      assets: [
-        {
-          type: "image",
-          src: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop",
-          caption: "Affinity Mapping session categorizing user feedback into core themes.",
-        },
-      ],
+          severity: "Medium"
+        }
+      ]
     },
     challenges: [
-      "Legacy backend API latency (avg 2.5s) restricted real-time validation.",
-      "Strict legal compliance required unskippable legal disclaimers.",
-      "Integrating 3rd party OCR tool without breaking the UI flow.",
+      "Persuading 50+ legacy product teams to migrate to a new system.",
+      "Handling versioning and breaking changes across a massive library.",
+      "Ensuring WCAG 2.1 AA compliance across every single component."
     ],
     architecture: {
-      description: "We moved from a monolithic server-side rendering to a micro-frontend architecture to allow the onboarding flow to scale independently.",
+      description: "Implemented a multi-tier token architecture (Primitive -> Semantic -> Component) using Style Dictionary. Used Stencil.js to deliver framework-agnostic Web Components.",
       stack: [
-        { name: "React", usage: "Component Library" },
-        { name: "GraphQL", usage: "Data Fetching" },
-        { name: "AWS Lambda", usage: "Serverless Functions" },
-        { name: "Storybook", usage: "Design System Documentation" },
-      ],
+        { name: "Stencil.js", usage: "Web Component Compiler" },
+        { name: "Style Dictionary", usage: "Token Management" },
+        { name: "Storybook", usage: "Documentation & Testing" }
+      ]
     },
     strategy: {
       kpis: [
-        "Reduce Time-to-Value (TTV) by 50%",
-        "Increase Day-1 Retention by 20%",
-        "Lower Customer Support tickets related to KYC by 30%",
+        "40% reduction in Design/Tech debt",
+        "30% faster feature handoff",
+        "100% WCAG 2.1 Compliance for core components"
       ],
       roadmap: [
-        "Q1: MVP Launch with basic OCR",
-        "Q2: Biometric Authentication integration",
-        "Q3: International market support (Multi-language)",
-      ],
+        "Phase 1: Atomic Foundations (Tokens, Buttons, Inputs)",
+        "Phase 2: Complex Patterns (Tables, Data Viz, Navigation)",
+        "Phase 3: Automated Accessibility Testing & Governance"
+      ]
     },
     design: {
       system: {
-        colorPalette: ["#191919", "#3B82F6", "#10B981", "#F59E0B", "#F3F4F6"],
-        typography: ["Inter", "Merriweather"],
+        colorPalette: ["#4F46E5", "#10B981", "#EF4444", "#1F2937", "#F8FAFC"],
+        typography: ["Inter", "Fira Code"]
       },
       gallery: [
         {
           type: "image",
-          src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
-          caption: "Early wireframe explorations focused on simplifying the form layout.",
-        },
-        {
-          type: "image",
-          src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-          caption: "Final high-fidelity dashboard showing the progressive success state.",
-          isFullWidth: true,
-        },
-      ],
+          src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop",
+          caption: "Atomic level component documentation in Storybook.",
+          isFullWidth: true
+        }
+      ]
     },
     process: [
       {
-        title: "Definition",
-        subtitle: "Taming the Ambiguity",
-        description: "Stakeholders had conflicting visions. I facilitated workshops to align everyone on a single problem statement.",
-        duration: "2 Weeks",
-        chaos: "Conflicting stakeholder visions and no clear user journey definition.",
-        clarity: "Aligned KPIs and a unified, simplistic user flow map.",
-        deliverables: ["Stakeholder Interviews", "Competitive Audit", "User Journey Map"],
-        image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000&auto=format&fit=crop",
+        title: "Audit & Align",
+        subtitle: "The Fragmented Reality",
+        description: "Mapped every UI variant across the ecosystem to create a unified component backlog.",
+        duration: "3 Months"
       },
       {
-        title: "Exploration",
-        subtitle: "Wide Net to Narrow Focus",
-        description: "We generated over 50 ideas. Through voting and feasibility checks, we narrowed it down to 3 viable concepts.",
-        duration: "3 Weeks",
-        chaos: "50+ divergent ideas and inconsistent visual patterns.",
-        clarity: "3 distinct, viable design concepts ready for testing.",
-        deliverables: ["Low-fi Wireframes", "Concept Sketches", "Crazy 8s"],
-        image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1000&auto=format&fit=crop",
+        title: "Tokenization",
+        subtitle: "The Semantic Shift",
+        description: "Moved from hardcoded values to a semantic token system supporting dark/light/high-contrast modes.",
+        duration: "4 Months"
       },
       {
-        title: "Refinement",
-        subtitle: "Polishing the Diamond",
-        description: "We took the winning concept and stress-tested it against edge cases, ensuring accessibility and compliance.",
-        duration: "4 Weeks",
-        chaos: "Friction in edge cases and accessibility gaps in the MVP.",
-        clarity: "A fully accessible, crash-proof prototype ready for dev.",
-        deliverables: ["High-fi Prototypes", "Usability Report", "Design Handoff"],
-        image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1000&auto=format&fit=crop",
-      },
+        title: "Governance",
+        subtitle: "Evolving the System",
+        description: "Established a contribution model and versioning workflow to ensure sustainability.",
+        duration: "Ongoing"
+      }
     ],
     impact: {
       metrics: [
-        { value: "40%", label: "Reduction in Drop-offs" },
-        { value: "+15%", label: "Conversion Rate" },
-        { value: "4.8/5", label: "App Store Rating" },
+        { value: "360+", label: "Teams Adopted" },
+        { value: "40%", label: "Debt Reduction" },
+        { value: "30%", label: "Cycle Time Gain" }
       ],
       testimonial: {
-        quote: "The new flow is not just better, it is a competitive advantage.",
-        author: "Sarah Jenkins",
-        role: "VP of Product",
-      },
-      chart: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-        datasets: [
-          {
-            label: "Conversion Rate %",
-            data: [12, 14, 13, 22, 28],
-            color: "#10B981",
-          },
-        ],
-      },
+        quote: "This design system is not just a UI kit; it's our engine for innovation. It's transformed how we build products.",
+        author: "Tech Lead",
+        role: "Global Design Studio"
+      }
     },
-    reflection: "Balancing security compliance with user experience was the toughest challenge. I learned that transparency is key to trust.",
+    reflection: "Building a design system is 20% design and 80% communication. Adoption is the only metric that truly matters.",
+    businessPerspective: {
+      roi: "Saved an estimated $1.2M annually in developer hours previously lost to redundant UI work.",
+      marketImpact: "Standardized the brand identity across all international sectors, increasing brand trust and recognition.",
+      executiveSummary: "A strategic infrastructure play that turned design from a bottleneck into a competitive advantage for Globant."
+    },
+    architectPerspective: {
+      stackRationale: "Chose Web Components to avoid framework lock-in. Stencil.js allowed us to output React and Angular wrappers natively.",
+      technicalChallenges: ["Shadow DOM styling limitations", "Cross-framework event propagation", "Binary size optimization"],
+      scalability: "Architecture supports unlimited child themes and secondary brand palettes via CSS Variables."
+    },
+    uxManagerPerspective: {
+      teamLeadership: "Managed a cross-functional team across 3 timezones, pivoting to an Agile-Design workflow.",
+      userEmpathy: "Conducted usability sessions with screen-reader users to refine our complex accessible components like Data Tables.",
+      accessibilityFocus: "Implemented a 'Shift-Left' accessibility approach, identifying issues at the Figma stage through automated plugins."
+    }
   },
   {
     id: "ar-filter-studio",
-    title: "Neon Nexus",
-    tagline: "Next-Gen Cybersecurity Dashboard",
-    heroImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000&auto=format&fit=crop",
-    role: "Senior UI Designer",
-    timeline: "6 Months",
-    team: "2 PMs, 5 Engineers, 1 Data Scientist",
-    tools: ["Figma", "D3.js", "After Effects"],
-    color: "#0055FF",
-    problem: 'Security analysts were experiencing "alert fatigue" due to a cluttered interface that treated every threat with equal visual weight.',
-    solution: 'Created a "Threat Heatmap" visualization and a dedicated triage workflow to help analysts prioritize critical issues instantly.',
+    title: "Globant AR Pod",
+    tagline: "Defining Spatial Engagement",
+    heroImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2000&auto=format&fit=crop",
+    role: "AR Initiative Lead",
+    timeline: "Ongoing",
+    team: "3 Designers + Self-Initiated",
+    tools: ["Spark AR", "Blender", "8th Wall", "Lens Studio"],
+    color: "#8B5CF6",
+    problem: "Traditional digital marketing was seeing diminishing returns. AR was an untapped opportunity at Globant with no structured team or frameworks.",
+    solution: "Spearheaded the 'AR Pod,' a dedicated innovation unit. Developed viral AR experiences that demonstrated technical leadership in the Metaverse space.",
     research: {
       insights: [
-        "Analysts spend 4 hours a day just filtering false positives.",
-        "Dark mode is essential for 24/7 SOC environments.",
-        "Critical alerts were often missed in list views.",
+        "Social AR has 70% higher dwell time than static ads.",
+        "WebAR (8th Wall) reduces friction by removing the need for app installs.",
+        "Gamification drives 3x higher brand recall."
       ],
+      findings: [
+        {
+          title: "The Friction Barrier",
+          description: "Users abandonded AR experiences that required a separate app download.",
+          type: "Behavior",
+          severity: "High"
+        }
+      ]
     },
     process: [
       {
-        title: "Shadowing",
-        description: "Spent 3 days in the SOC (Security Operations Center) observing analysts.",
+        title: "POC",
+        description: "Built three rapid prototypes (Face Filters, World Tracking, Portals)."
       },
       {
-        title: "Prototyping",
-        description: "Built high-fidelity interactive prototypes to test the new alert triage gestures.",
-      },
+        title: "Evangelism",
+        description: "Hosted 5+ internal workshops to upskill designers in 3D modeling."
+      }
     ],
     impact: {
       metrics: [
-        { value: "-60%", label: "Response Time" },
-        { value: "95%", label: "Analyst Satisfaction" },
-      ],
+        { value: "10k+", label: "Organic Views" },
+        { value: "1st", label: "AR Specialized Team" },
+        { value: "100%", label: "Studio Recognition" }
+      ]
     },
-    reflection: "Designing for experts requires deep domain immersion. Standard patterns often do not apply to high-stakes control rooms.",
+    reflection: "Innovation isn't given; it's taken. Side projects can transform an entire organization's capability.",
+    businessPerspective: {
+      roi: "Captured high-value immersive marketing deals previously outsourced by the Design Studio.",
+      marketImpact: "Positioned Globant as a front-runner in Emerging Tech and spatial computing.",
+      executiveSummary: "Evolved a personal experiment into a revenue-generating business unit."
+    },
+    architectPerspective: {
+      stackRationale: "Used 8th Wall for high-impact web-based AR and Spark/Lens for social reach.",
+      technicalChallenges: ["Optimizing high-poly Blender models for mobile", "Real-world light estimation", "Latency in SLAM tracking"],
+      scalability: "Created a reusable plugin library for Spark AR to accelerate filter development (e.g., standard UI/logic templates)."
+    },
+    uxManagerPerspective: {
+      teamLeadership: "Built the AR Pod from zero, establishing hiring criteria and skill benchmarks for immersive designers.",
+      userEmpathy: "Focused on 'Natural Interaction'—ensuring AR gestures were intuitive for non-technical users.",
+      accessibilityFocus: "Designed for 'Environmental Accessibility'—considering lighting and physical space constraints of the end user."
+    }
+  },
+  {
+    id: "globant-travelnxt-glow",
+    title: "TravelNXT Glow",
+    tagline: "The Future of Enterprise Travel",
+    heroImage: "https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?q=80&w=2000&auto=format&fit=crop",
+    role: "Product Designer",
+    timeline: "3 Months",
+    team: "2 Designers, 5 Developers",
+    tools: ["Figma", "Protopie", "React", "Cramer Motion"],
+    color: "#BE185D",
+    problem: "Globant's internal travel platform felt clinical and tedious. Approval bottlenecks and a high 'perceived effort' caused employee frustration and booking delays.",
+    solution: "Re-imagined the platform with a 'consumer-grade' aesthetic. Focused on micro-interactions and mobile-first logic to make enterprise workflows feel effortless.",
+    research: {
+      insights: [
+        "Managers often approved travel while commuting, making mobile responsiveness critical.",
+        "Lack of visual feedback during flight searches caused users to double-click and error out.",
+        "Visual hierarchy was cluttered with legacy flight data that wasn't relevant to most users."
+      ]
+    },
+    process: [
+      {
+        title: "Auditing Friction",
+        description: "Mapped the 'Search to Approval' journey, identifying 4 major drop-off points."
+      },
+      {
+        title: "Glow-up Phase",
+        description: "Implemented a refined UI system focused on clarity, spacing, and meaningful motion."
+      }
+    ],
+    impact: {
+      metrics: [
+        { value: "20%", label: "Faster Booking" },
+        { value: "65%", label: "Mobile Approvals" },
+        { value: "Low", label: "Error Rate" }
+      ]
+    },
+    reflection: "Enterprise tools don't have to be boring. In fact, they shouldn't be. 'Delight' is a functional requirement.",
+    businessPerspective: {
+      roi: "Reduced travel support tickets by 40%, freeing up the administrative team for more complex tasks.",
+      marketImpact: "Improved internal employee NPS scores recorded via survey.",
+      executiveSummary: "A UX modernization that directy improved employee productivity and platform compliance."
+    },
+    architectPerspective: {
+      stackRationale: "Used Framer Motion for high-fidelity micro-interactions that communicate state changes clearly.",
+      technicalChallenges: ["Real-time GDS data synchronization", "Handling edge-case travel policies in a simple UI", "Offline-first approval caching"],
+      scalability: "Modular component approach allowed the new 'Glow' UI to be themed for different internal studio sub-brands."
+    },
+    uxManagerPerspective: {
+      teamLeadership: "Collaborated with the Internal Systems team to align design vision with technical capability.",
+      userEmpathy: "Focused on the 'Commuter Manager' persona—designing large tap targets and contextual summaries for quick approval.",
+      accessibilityFocus: "Ensured high color contrast for the new 'Glow' palette (Pink/Indigo) to pass WCAG AA standards."
+    }
+  },
+  {
+    id: "globant-automobile",
+    title: "Automobile in Metaverse",
+    tagline: "Visualizing Trust through Digital Twins",
+    heroImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2000&auto=format&fit=crop",
+    role: "Lead UX Researcher",
+    timeline: "2 Months",
+    team: "2 UX Researchers, 1 3D Artist",
+    tools: ["Unity", "Blender", "Adobe Aero", "Figma"],
+    color: "#0EA5E9",
+    problem: "Car servicing is often a 'black box' for owners. Non-technical users feel anxious about being overcharged or misinformed about vehicle part replacements.",
+    solution: "Conceptualized a 'Metaverse Garage' using Digital Twins. Users can watch a 3D visualization of their car's health and specific service actions in real-time.",
+    research: {
+      insights: [
+        "Users felt a 'blind' trust gap during vehicle handovers.",
+        "Gamified 'Health Bars' for car parts were more intuitive than technical reports.",
+        "Transparency directly correlated with higher 'Upsell Acceptance' rates for necessary repairs."
+      ]
+    },
+    process: [
+      {
+        title: "Persona Deep-dive",
+        description: "Focused on underserved demographics who felt most excluded from technical mechanic jargon."
+      },
+      {
+        title: "3D Visualization",
+        description: "Prototyped a 'Holographic Service Receipt' where users can see parts in 3D."
+      }
+    ],
+    impact: {
+      metrics: [
+        { value: "High", label: "Trust Score" },
+        { value: "85", label: "NPS Score" },
+        { value: "100%", label: "Transparency" }
+      ]
+    },
+    reflection: "Technical complexity should be handled by the machine; transparency should be handled by the design.",
+    businessPerspective: {
+      roi: "A concept that could potentially reduce customer churn at premium service centers by 15-20%.",
+      marketImpact: "Pioneered a new CX model for the automotive industry using emerging metaverse technologies.",
+      executiveSummary: "An exploration into trust-based CX that leverages spatial data to humanize technical services."
+    },
+    architectPerspective: {
+      stackRationale: "Leveraged Unity for the high-fidelity Digital Twin simulation.",
+      technicalChallenges: ["Mapping real-world OBD-II sensor data to 3D animations", "Optimizing real-time rendering on web/mobile browsers", "Data security for vehicle telemetry"],
+      scalability: "Designing for the future of Connected Vehicles—where the Digital Twin lives throughout the car's lifecycle."
+    },
+    uxManagerPerspective: {
+      teamLeadership: "Facilitated co-creation workshops between mechanics and customers to bridge the information gap.",
+      userEmpathy: "Maintained a strong 'Human-First' approach, ensuring the tech (Metaverse) served the user need (Trust).",
+      accessibilityFocus: "Used redundant coding (Text + Icon + 3D) to communicate vehicle issues, ensuring users with different learning styles could understand."
+    }
   },
   {
     id: "infosys-hiring-platform",
-    title: "Aero Systems",
-    tagline: "Modernizing Flight Logistics",
-    heroImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop",
-    role: "UX Designer",
-    timeline: "4 Months",
-    team: "Start-up Core Team",
-    tools: ["Figma", "Webflow"],
-    color: "#FF4500",
-    problem: "Pilots and ground crew relied on disjointed paper trails and legacy software for flight planning.",
-    solution: "A unified iPad-first application that integrates weather, cargo, and crew schedules in one offline-capable interface.",
-    research: {
-      insights: [
-        "Connectivity is intermittent on the tarmac.",
-        "Text legibility is critical in variable lighting conditions.",
-      ],
-    },
+    title: "Infosys Hiring Platform",
+    tagline: "Streamlining Enterprise Recruitment",
+    heroImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2000&auto=format&fit=crop",
+    role: "UX Lead",
+    timeline: "1 Year",
+    team: "Self-Initiated",
+    tools: ["Figma", "SaaS", "Enterprise UX"],
+    color: "#ff5c00",
+    problem: "Infosys's internal hiring platform was outdated, causing massive friction for recruiters and candidates.",
+    solution: "Independently redesigned the platform from scratch, streamlining recruitment for 15,000+ employees.",
     process: [
-      {
-        title: "Field Research",
-        description: "Interviewed pilots at the hanger to understand their pre-flight checklist flow.",
-      },
+      { title: "Research", description: "Interviewed internal hiring managers." },
+      { title: "Design", description: "Created high-fidelity prototypes in Figma." }
     ],
     impact: {
       metrics: [
-        { value: "0", label: "Paper Forms Used" },
-        { value: "2x", label: "Faster Pre-flight" },
-      ],
+        { value: "15k+", label: "Employees Served" },
+        { value: "30%", label: "Faster Hiring" }
+      ]
     },
-    reflection: "Offline-first thinking must happen at the design stage, not just engineering.",
+    research: {
+      insights: ["Recruitment bottlenecks identified in legacy system.", "Mobile-first approach preferred by hiring managers."]
+    },
+    reflection: "Technical skill is only half the battle; the other half is understanding the human workflow."
   },
   {
     id: "vaccin1st",
-    title: "Quantum",
-    tagline: "AI Research Visualization",
-    heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop",
-    role: "Visual Designer",
-    timeline: "2 Months",
-    team: "Research Team",
-    tools: ["Blender", "Figma"],
-    color: "#FFD700",
-    problem: "Complex neural network architectures were difficult to explain to stakeholders and non-technical investors.",
-    solution: "A series of 3D interactive visualizations and a design system for representing AI nodes and data flows.",
-    research: {
-      insights: [
-        "Investors need simple metaphors for complex tech.",
-        "Static 2D diagrams fail to show the depth of the network.",
-      ],
-    },
+    title: "Vaccin1st Platform",
+    tagline: "Public Health Tech at Scale",
+    heroImage: "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=2000&auto=format&fit=crop",
+    role: "System Specialist",
+    timeline: "1 Year",
+    team: "Global Team",
+    tools: ["AngularJS", "JMeter", "Automation"],
+    color: "#00c896",
+    problem: "Coordinating mass vaccinations during the pandemic was an unprecedented logistical challenge.",
+    solution: "Led end-to-end development of a platform enabling 150k+ vaccinations across three countries.",
     process: [
-      {
-        title: "3D Modeling",
-        description: "Used Blender to create abstract representations of neural layers.",
-      },
-    ],
-    impact: {
-      metrics: [{ value: "$2M", label: "Funding Secured" }],
-    },
-    reflection: "Visual design is a powerful tool for communication, effectively acting as a translator for complex ideas.",
-  },
-  {
-    id: "iit-gait-recognition",
-    title: "Velocite",
-    tagline: "Next-Gen Automotive Interface",
-    heroImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2000&auto=format&fit=crop",
-    role: "Product Designer",
-    timeline: "5 Months",
-    team: "Automotive OEM",
-    tools: ["Protopie", "Figma"],
-    color: "#10B981",
-    problem: "In-car infotainment systems are often distracting and buried under deep menus.",
-    solution: "A voice-first, gesture-supported driver interface that surfaces context-aware controls (e.g., parking mode when stopped).",
-    research: {
-      insights: ["Drivers glance at screens for less than 2 seconds.", "Physical feedback is missed in touch-only screens."],
-    },
-    process: [
-      {
-        title: "Simulator Testing",
-        description: "Tested prototypes in a driving simulator to measure eye-off-road time.",
-      },
+      { title: "Development", description: "Built on AngularJS with complex back-end logic." },
+      { title: "Testing", description: "Load testing using JMeter for high concurrency." }
     ],
     impact: {
       metrics: [
-        { value: "<1s", label: "Task Time" },
-        { value: "100%", label: "Safety Score" },
-      ],
+        { value: "150k+", label: "Vaccinated" },
+        { value: "3", label: "Countries" }
+      ]
     },
-    reflection: "Safety is the ultimate constraint in automotive design. Minimalism is a safety feature.",
+    research: {
+      insights: ["Real-time data sync was critical for multi-site coordination.", "Simplicity in UX reduced registration errors by 50%."]
+    },
+    reflection: "At the peak of a crisis, design must be invisible and purely functional."
   },
   {
-    id: "echo",
-    title: "Echo",
-    tagline: "Social Audio Experience",
-    heroImage: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=2000&auto=format&fit=crop",
-    role: "Founder & Designer",
-    timeline: "Ongoing",
-    team: "Solo",
-    tools: ["SwiftUI", "Figma"],
-    color: "#B838EA",
-    problem: "Existing audio apps feel isolating or purely transactional (podcasts/music).",
-    solution: "A spatial audio social network where users drift in and out of conversations based on proximity in a virtual room.",
-    research: {
-      insights: ["Serendipity is missing in digital social spaces."],
-    },
+    id: "iit-gait-recognition",
+    title: "Gait Recognition System",
+    tagline: "Advancing Biometric Identification",
+    heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2000&auto=format&fit=crop",
+    role: "Research Intern",
+    timeline: "2019",
+    team: "IIT-Gandhinagar",
+    tools: ["AI/ML", "Computer Vision", "Research"],
+    color: "#8b5cf6",
+    problem: "Accurate human identification via gait patterns in low-resolution video.",
+    solution: "Co-authored an IEEE paper on intention detection and gait recognition using deep learning.",
     process: [
-      {
-        title: "MVP",
-        description: "Launched a TestFlight beta to 50 users.",
-      },
+      { title: "Research", description: "Studied biomechanical gait models." },
+      { title: "Modeling", description: "Developed neural networks for pattern recognition." }
     ],
     impact: {
-      metrics: [{ value: "1k+", label: "Beta Waitlist" }],
+      metrics: [
+        { value: "IEEE", label: "Publication" },
+        { value: "Finalist", label: "Award" }
+      ]
     },
-    reflection: "Building a social product requires designing for critical mass and empty states.",
-  },
-  {
-    id: "zenith",
-    title: "Zenith",
-    tagline: "Holistic Wellness Companion",
-    heroImage: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop",
-    role: "UX Researcher",
-    timeline: "3 Months",
-    team: "Agency",
-    tools: ["Dovetail", "Figma"],
-    color: "#FF6B6B",
-    problem: "Wellness apps often feel like chores rather than supportive companions.",
-    solution: 'A wellness app based on "Micro-habits" and distinct day/night modes to align with circadian rhythms.',
     research: {
-      insights: ["Users abandon apps that demand too much time.", "Blue light at night disrupts sleep, counteracting the app purpose."],
+      insights: ["Temporal features played a larger role than spatial frames alone.", "CNN-LSTM architectures outperformed traditional SVM models."]
     },
-    process: [
-      {
-        title: "Diary Studies",
-        description: "Participants tracked their mood and energy for 2 weeks.",
-      },
-    ],
-    impact: {
-      metrics: [{ value: "85%", label: "Retention Day 30" }],
-    },
-    reflection: "Small interactions build big habits. The UI must be friction-free.",
-  },
+    reflection: "Biometrics is a bridge between biology and mathematics."
+  }
 ];
